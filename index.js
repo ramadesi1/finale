@@ -9,11 +9,10 @@ function myLoop(awal, akhir, counter) {
     if (inner[awal - 1]) {
       inner[awal - 1].innerHTML = '';
     }
-    console.log(counter);
 
     inner[
       awal
-    ].innerHTML += `<img id="bus" src="bus.png" alt="Ini bus" height="40px" width="40px" /><br /> <h2 id="lokasi">${counter *
+    ].innerHTML = `<img id="bus" src="bus.png" alt="Ini bus" height="40px" width="40px" /><br /> <h2 class="harga">${counter *
       2000}</h2>`;
     awal++;
     counter++;
@@ -36,6 +35,16 @@ document.querySelector('#myForm').addEventListener('submit', function(e) {
   if (document.getElementById('bus')) {
     document.getElementById('bus').remove();
   }
+  // // Get the <ul> element with id="myList"
+  // var harga = document.getElementsByClassName('inner-card');
+  // console.log(harga);
+
+  // for (i in harga) {
+  //   console.log(harga[i]);
+  //   if (harga[i].hasChildNodes()) {
+  //     harga[i].removeChild(harga[i].childNodes[0]);
+  //   }
+  // }
 
   var lokasi = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
   var counter = 0;

@@ -104,7 +104,9 @@ body {
   display: inline-block;
   color: white;
 }
-
+.harga {
+  color: white;
+}
 .inner-card {
   text-align: center;
 }
