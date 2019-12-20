@@ -1,49 +1,50 @@
-function myLoop(awal, akhir) {
+function myLoop(awal, akhir, counter) {
   //  create a loop function
   setTimeout(function() {
     //  call a 3s setTimeout when the loop is called
-    var card = document.getElementsByClassName("card");
-    console.log(card[awal].className); //  your code here
-    card[awal].classList.add("hijau");
+    var card = document.getElementsByClassName('card');
+    var inner = document.getElementsByClassName('inner-card');
+    card[awal].classList.add('hijau');
 
-    if (card[awal - 1]) {
-      card[awal - 1].innerHTML = "";
+    if (inner[awal - 1]) {
+      inner[awal - 1].innerHTML = '';
     }
+    console.log(counter);
 
-    card[
+    inner[
       awal
-    ].innerHTML = `<img src="bus.png" alt="Ini bus" height="40px" width="40px" /> <h2>${awal *
+    ].innerHTML += `<img id="bus" src="bus.png" alt="Ini bus" height="40px" width="40px" /><br /> <h2 id="lokasi">${counter *
       2000}</h2>`;
-    awal++; //  increment the counter
+    awal++;
+    counter++;
     if (awal <= akhir) {
       //  if the counter < 10, call the loop function
-      myLoop(awal, akhir); //  ..  again which will trigger another
+      myLoop(awal, akhir, counter); //  ..  again which will trigger another
     } //  ..  setTimeout()
   }, 500);
 }
 
-document.querySelector("#myForm").addEventListener("submit", function(e) {
+document.querySelector('#myForm').addEventListener('submit', function(e) {
   e.preventDefault(); //stop form from submitting
-  console.log("--------");
-  var card = document.getElementsByClassName("card");
+  // reset dulu
+  let x = document.getElementsByClassName('hijau');
+  while (x.length > 0) {
+    // Removing a class with VanillaJS
+    x[0].classList.remove('hijau');
+  }
+  // hilangkan bus juga
+  if (document.getElementById('bus')) {
+    document.getElementById('bus').remove();
+  }
 
-  // get property naik dari
+  var lokasi = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+  var counter = 0;
 
-  // get property turun di
+  var awal = document.getElementById('awal').value;
+  var akhir = document.getElementById('akhir').value;
 
-  //   perulangannya diganti naik dari sampai turun di
+  var posisiAwal = lokasi.indexOf(awal.toLowerCase());
+  var posisiAkhir = lokasi.indexOf(akhir.toLowerCase());
 
-  //   for (var i = 0; i < card.length; i++) {
-  //     setTimeout(function() {
-  //       console.log(card[i].className);
-  //       card[i].classList.add("hijau");
-  //       if (i === card.length - 1) {
-  //         card[i].innerHTML =
-  //           '<img src="bus.png" alt="Ini bus" height="40px" width="40px" />';
-  //       } //   window.location.href = this.href;
-  //     }, 1000);
-  //   }
-  var awal = 0;
-  var akhir = 4;
-  myLoop(awal, akhir); //  start the loop
+  myLoop(posisiAwal, posisiAkhir, counter); //  start the loop
 });

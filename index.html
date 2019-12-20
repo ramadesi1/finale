@@ -8,29 +8,53 @@
     <title>Website Desi</title>
   </head>
   <body>
-    <h1 class="page-title">Rute Angkot</h1>
-    <form id="myForm" action="#">
-      Naik Dari:<br />
-      <input type="text" name="naik" placeholder="Misal : A" />
-      <br />
-      Turun Di:<br />
-      <input type="text" name="turun" placeholder="Misal : H" />
-      <br /><br />
-      <input type="submit" value="Submit" />
-    </form>
-    <div class="game-container">
-      <div class="game-info-container">
-        <div class="game-info">Time <span id="time-remaining">100</span></div>
-        <div class="game-info">Flips <span id="fi=lips">0</span></div>
+    <h1 class="page-title">Hitung Ongkos Rute Angkot</h1>
+    <div class="form-style">
+      <form id="myForm">
+        <fieldset>
+          <legend><span class="number">2</span>Naik dari</legend>
+          <input type="text" name="awal" id="awal" placeholder="A - H" />
+        </fieldset>
+        <fieldset>
+          <legend><span class="number">2</span> Turun di</legend>
+          <input type="text" name="akhir" id="akhir" placeholder="A - H" />
+        </fieldset>
+        <input type="submit" value="Hitung" />
+      </form>
+    </div>
+    <div class="angkot-container">
+      <div class="card">
+        <div class="loc"><h3>A</h3></div>
+        <div class="inner-card"></div>
       </div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
+      <div class="card">
+        <div class="loc"><h3>B</h3></div>
+        <div class="inner-card"></div>
+      </div>
+      <div class="card">
+        <div class="loc"><h3>C</h3></div>
+        <div class="inner-card"></div>
+      </div>
+      <div class="card">
+        <div class="loc"><h3>D</h3></div>
+        <div class="inner-card"></div>
+      </div>
+      <div class="card">
+        <div class="loc"><h3>E</h3></div>
+        <div class="inner-card"></div>
+      </div>
+      <div class="card">
+        <div class="loc"><h3>F</h3></div>
+        <div class="inner-card"></div>
+      </div>
+      <div class="card">
+        <div class="loc"><h3>G</h3></div>
+        <div class="inner-card"></div>
+      </div>
+      <div class="card">
+        <div class="loc"><h3>H</h3></div>
+        <div class="inner-card"></div>
+      </div>
     </div>
   </body>
   <script src="index.js"></script>
